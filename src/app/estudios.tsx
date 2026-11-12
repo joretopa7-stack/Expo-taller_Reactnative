@@ -1,0 +1,1 @@
+//Pantalla 2: Formación Académica
