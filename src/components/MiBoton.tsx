@@ -43,3 +43,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

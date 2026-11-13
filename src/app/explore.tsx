@@ -178,3 +178,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
+
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

@@ -56,3 +56,4 @@ export default function Layout() {
     </Tabs>
   );
 }
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

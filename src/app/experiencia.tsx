@@ -37,3 +37,4 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
 });
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

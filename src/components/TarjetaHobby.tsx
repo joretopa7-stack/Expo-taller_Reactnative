@@ -45,3 +45,4 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

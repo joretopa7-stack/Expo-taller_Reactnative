@@ -53,3 +53,4 @@ const styles = StyleSheet.create({
     lineHeight: 21,
   },
 });
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

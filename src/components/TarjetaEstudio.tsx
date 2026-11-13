@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
-
+//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL
