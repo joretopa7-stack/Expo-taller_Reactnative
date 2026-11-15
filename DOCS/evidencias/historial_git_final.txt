@@ -1,0 +1,25 @@
+Historial Git final — rama local main
+
+Commits en HEAD: 18
+Commits en origin/main: 11
+Estado: ## main...origin/main [ahead 7]
+
+Commits (orden cronológico):
+068734b | 2026-11-11 | Initial commit
+d5b31b9 | 2026-11-11 | chore: crear estructura inicial del proyecto
+d552138 | 2026-11-12 | feat: crear TarjetaEstudio con la propiedad enCurso
+49a899d | 2026-11-12 | feat: agregar cápsula de estudio en curso
+0c5d7a8 | 2026-11-12 | feat: configurar cuatro pestañas con iconos
+7977372 | 2026-11-12 | feat: construir pantalla de datos personales
+8d67002 | 2026-11-12 | feat: agregar MiBoton para acciones de contacto
+1dca585 | 2026-11-12 | feat: mostrar tres tarjetas de formación académica
+5f4f23e | 2026-11-12 | feat: construir tarjetas de experiencia laboral
+9fab0b2 | 2026-11-12 | feat: construir tarjetas de hobbies
+52c6fad | 2026-11-12 | estructura base funcional falta personalizar
+82a6580 | 2026-11-15 | feat: personalizar hoja de vida ADSO y navegación
+80d2431 | 2026-11-15 | docs: documentar dependencias y ejecución del proyecto
+3a10698 | 2026-11-15 | docs: actualizar validaciones y estado del repositorio
+dfc4776 | 2026-11-15 | chore: limpiar comentarios resueltos del layout
+aca1fa9 | 2026-11-15 | docs: corregir conteo del historial Git
+4b6be3e | 2026-11-15 | fix: alinear estructura, enlaces e intereses con la guía
+994537a | 2026-11-15 | feat: restaurar hobbies previos con iconos

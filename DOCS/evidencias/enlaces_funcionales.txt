@@ -1,0 +1,15 @@
+Evidencia individual de enlaces — prueba final
+
+Contacto
+- Correo: `mailto:joretopa7@gmail.com`. href presente en el anchor del botón “Enviar correo”. Se verificó el destino; no se lanzó una aplicación de correo en el sandbox.
+- Teléfono: `tel:+573115236763`. href presente en el anchor del botón “Llamar”. Se verificó el destino; no se realizó una llamada.
+
+Perfiles externos
+- LinkedIn: `https://linkedin.com/in/jorge-torres-paez-120198417`. Chromium produjo una nueva pestaña con la URL exacta; atributo `target="_blank"`, `rel="noopener noreferrer"`; solicitud HEAD real: HTTP 200.
+- GitHub: `https://github.com/joretopa7-stack`. Chromium produjo una nueva pestaña con la URL exacta; atributo `target="_blank"`, `rel="noopener noreferrer"`; solicitud HEAD real: HTTP 200.
+
+Playlists
+- Urban Christian: `https://open.spotify.com/playlist/75UN9lrSGbkYl8JHf2ojvO?si=GcqoFYs9QxeII7e8yxclOw`. El botón de igual nombre abrió una nueva pestaña con la URL exacta; HTTP 200.
+- Románticas cristianas: `https://open.spotify.com/playlist/7tgriHVMSbBuihjWC6Ccol?si=eCMerDimRWqmpKmGrRZZjQ`. El botón de igual nombre abrió una nueva pestaña con la URL exacta; HTTP 200.
+
+Las cuatro navegaciones externas se comprobaron mediante clic real de Playwright y captura del evento `popup`. Para esa prueba puntual se interceptó la solicitud al destino para no cargar terceros; la disponibilidad HTTP se comprobó por separado con HEAD real. Los botones visibles son links semánticos; no hay botones vacíos ni alertas intermedias.

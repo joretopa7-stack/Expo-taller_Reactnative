@@ -1,0 +1,17 @@
+RESULTADOS DE PRUEBA EN CHROMIUM — 15 de noviembre de 2026
+
+Re-prueba final con Playwright contra Expo Web en `http://127.0.0.1:8085/`:
+
+- PASS — `/hobbies` y `/` respondieron HTTP 200.
+- PASS — se muestran Lectura, Deporte, Programación, Escuchar música y Fútbol.
+- PASS — se comprobó un icono Ionicons renderizado en cada tarjeta; los nombres en código son `book-outline`, `football-outline`, `code-slash-outline`, `musical-notes-outline` y `football-outline`.
+- PASS — clic en cada título abre el panel inline y un segundo clic lo cierra; los detalles coinciden con cada actividad.
+- PASS — Música muestra ambas playlists con href exacto, `target="_blank"` y `rel="noopener noreferrer"`.
+- PASS — Fútbol despliega “El fútbol es uno de mis hobbies.” dentro de su tarjeta.
+- PASS — la interfaz visible de Hobbies no contiene referencias a CV/currículum.
+- PASS — Inicio conserva correo, teléfono, LinkedIn y GitHub con sus href reales.
+- PASS — cero errores `pageerror`, cero errores de consola y cero diálogos/alertas.
+
+Construcción repetida sobre el código final: `npx tsc --noEmit` (sin diagnósticos), `npx expo export --platform web` (`Exported: dist`) y `npx expo export --platform android --no-bytecode --output-dir /tmp/ExpoApp_android_five_hobbies` (bundle JavaScript exportado; no APK/AAB).
+
+Las capturas 02–09 muestran el aplicativo real en móvil y escritorio, incluyendo las cinco tarjetas y las expansiones finales de Música y Fútbol. Las capturas técnicas 10–15 muestran archivos y registros reales servidos en UTF-8; las copias recortadas solo eliminan márgenes blancos para el informe.

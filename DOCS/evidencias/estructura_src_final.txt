@@ -1,0 +1,13 @@
+Estructura final verificada — inventario real de src
+
+src/app/_layout.tsx
+src/app/estudios.tsx
+src/app/experiencia.tsx
+src/app/hobbies.tsx
+src/app/index.tsx
+src/components/MiBoton.tsx
+src/components/TarjetaEstudio.tsx
+src/components/TarjetaExperiencia.tsx
+src/components/TarjetaHobby.tsx
+
+Total: 9 archivos. Solo existen src/app y src/components.

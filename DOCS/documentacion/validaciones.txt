@@ -1,0 +1,38 @@
+VALIDACIÓN FINAL — TALLER ADSO / EXPO
+Fecha: 15 de noviembre de 2026
+Proyecto: `/home/ubuntu/entrega_ADSO/ExpoApp`
+
+## Compilación y ejecución
+
+- `npm ci --no-audit --no-fund`: dependencias del lockfile instaladas; el `package-lock.json` no se modificó en esta revisión.
+- `npx tsc --noEmit`: código 0, sin diagnósticos.
+- `npx expo export --platform web`: código 0, `Exported: dist`.
+- `npx expo export --platform android --no-bytecode --output-dir /tmp/ExpoApp_android_five_hobbies`: código 0, bundle exportado. Es JavaScript, no un APK/AAB.
+- Servidor Expo Web: `http://127.0.0.1:8085/` y ruta `/hobbies`, HTTP 200.
+
+## Chromium — viewport móvil
+
+Con Playwright en 430 × 932 px se comprobaron las cinco tarjetas: Lectura, Deporte, Programación, Escuchar música y Fútbol. Cada una tiene un nodo de icono Ionicons renderizado y cada panel abre/cierra inline. Nombres de iconos verificados en el código: `book-outline`, `football-outline`, `code-slash-outline`, `musical-notes-outline` y `football-outline`. El panel de música muestra los dos botones de Spotify; el de fútbol muestra su detalle. No se hallaron referencias a CV/currículum en el texto visible de Hobbies. Inicio conserva correo, teléfono, LinkedIn y GitHub. Resultado: cero errores `pageerror`, cero errores de consola y cero diálogos/alertas. Las capturas reales están en evidencias 01–09.
+
+## Enlaces revisados individualmente
+
+| Destino | Resultado de URL / DOM | Disponibilidad exterior |
+|---|---|---|
+| Correo `mailto:joretopa7@gmail.com` | href correcto presente en Inicio | No se probó un cliente de correo físico |
+| Teléfono `tel:+573115236763` | href correcto presente en Inicio | No se inició llamada en un dispositivo |
+| LinkedIn `https://linkedin.com/in/jorge-torres-paez-120198417` | Clic y popup con URL exacta; `target=_blank`, `rel=noopener noreferrer` | HEAD HTTP 200, sin redirección |
+| GitHub `https://github.com/joretopa7-stack` | Clic y popup con URL exacta; `target=_blank`, `rel=noopener noreferrer` | HEAD HTTP 200, sin redirección |
+| Urban Christian `https://open.spotify.com/playlist/75UN9lrSGbkYl8JHf2ojvO?si=GcqoFYs9QxeII7e8yxclOw` | Botón visible, clic y popup con URL exacta; `target=_blank`, `rel=noopener noreferrer` | HEAD HTTP 200, sin redirección |
+| Románticas cristianas `https://open.spotify.com/playlist/7tgriHVMSbBuihjWC6Ccol?si=eCMerDimRWqmpKmGrRZZjQ` | Botón visible, clic y popup con URL exacta; `target=_blank`, `rel=noopener noreferrer` | HEAD HTTP 200, sin redirección |
+
+En la prueba Playwright de popup se interceptó la navegación tras leer la URL para no cargar sitios de terceros; el status HTTP se midió por separado con solicitudes HEAD. HTTP 200 acredita respuesta disponible, no acceso a contenido privado ni autenticación. Registros detallados en `../evidencias/enlaces_funcionales.txt` y `../evidencias/pruebas_chromium.txt`.
+
+## Estructura, texto e iconos
+
+`find src -type f | sort` entrega exactamente cinco rutas y cuatro componentes. La búsqueda en `src` no encuentra referencias a CV/currículum en contenido de la app. Cada hobby tiene un icono: se preservan `book-outline`, `football-outline` y `code-slash-outline` de las tarjetas originales; Música lleva `musical-notes-outline`, y Fútbol mantiene `football-outline`. Los archivos del starter retirados, con motivos, están en `../evidencias/archivos_eliminados.txt`.
+
+## Git y límites
+
+La carpeta contiene el historial local completo: 18 commits en `main` (11 base y 7 de entrega); `origin/main` tiene 11 y `main` está adelante en siete. El nuevo commit local es `994537a` (`feat: restaurar hobbies previos con iconos`). El árbol de código quedó limpio. No se hizo push, reset, rebase ni reescritura de commits previos.
+
+No se ejecutó Expo Go en teléfono/emulador, no se generó APK/AAB y no se ejecutaron los handlers nativos de correo/teléfono. La prueba en hardware queda pendiente.

@@ -1,0 +1,15 @@
+Limpieza de archivos bajo `src/` — corrección de 15 de noviembre de 2026
+
+Se contrastaron los imports desde las nueve piezas requeridas y se revisó la exportación Expo después de la limpieza. Se retiraron estos archivos de starter, sin imports desde la estructura final:
+
+- `src/app/explore.tsx`: ruta demostrativa extra que produciría una quinta pantalla y no está en el árbol de la guía.
+- `src/components/animated-icon.module.css`, `animated-icon.tsx`, `animated-icon.web.tsx`: animación demostrativa usada por Explore.
+- `src/components/app-tabs.tsx`, `app-tabs.web.tsx`: barra de pestañas de ejemplo no usada por el layout final.
+- `src/components/external-link.tsx`: wrapper de ejemplo sin referencias en las pantallas finales.
+- `src/components/hint-row.tsx`, `themed-text.tsx`, `themed-view.tsx`, `ui/collapsible.tsx`, `web-badge.tsx`: piezas de ayuda/tema usadas por Explore o por UI de starter, sin imports en las rutas finales.
+- `src/constants/theme.ts`, `src/global.css`, `src/hooks/use-color-scheme.ts`, `use-color-scheme.web.ts`, `use-theme.ts`: sistema de tema/base web del starter, no consumido por las cuatro pantallas.
+- `src/utils/mostrarAlerta.ts`: helper de alertas agregado en una versión anterior y ya innecesario; el encargo final exige expansión inline y enlaces reales, no alertas.
+
+No se eliminaron assets, configuraciones, package.json, package-lock.json, scripts del proyecto ni dependencias solicitadas por la guía. Tras la limpieza, `npx tsc --noEmit`, exportación web y exportación Android JavaScript finalizaron correctamente.
+
+La copia local actual no contiene estos archivos en src; las revisiones anteriores del historial Git siguen conservadas. No se reescribió el historial compartido/base: para reescribir commits anteriores o alterar el remoto se requeriría autorización explícita.
