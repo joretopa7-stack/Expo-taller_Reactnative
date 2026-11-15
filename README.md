@@ -73,4 +73,4 @@ La compilación web comprueba empaquetado y renderizado web; no equivale a una p
 
 ## Repositorio
 
-Repositorio remoto incluido en la configuración Git del ZIP: [Expo-taller_Reactnative](https://github.com/joretopa7-stack/Expo-taller_Reactnative). El historial conserva los 10 commits base y agrega commits reales de esta entrega, sin reescribir ni forzar la rama. El ZIP incluye el historial local actualizado; el remoto no se publicó desde esta sesión.
+Repositorio remoto incluido en la configuración Git del ZIP: [Expo-taller_Reactnative](https://github.com/joretopa7-stack/Expo-taller_Reactnative). El historial conserva los 11 commits base y agrega cinco commits locales reales de esta entrega, sin reescribir ni forzar la rama. El ZIP incluye el historial local actualizado; el remoto no se publicó desde esta sesión.
