@@ -65,10 +65,12 @@ La información del perfil se tomó del CV adjunto. El proyecto *Huellitas Salud
 - `npm ci --no-audit --no-fund`: dependencias instaladas correctamente.
 - `npx tsc --noEmit`: TypeScript sin errores tras corregir tipos de color/ref detectados en el layout y en el componente web heredado. La pantalla `explore` original se conserva, pero se oculta del menú para que solo queden las cuatro pestañas del taller.
 - `npx expo export --platform web`: bundle web exportado a `dist/`.
+- `npx expo export --platform android --no-bytecode --output-dir /tmp/ExpoApp_android`: bundle JavaScript Android exportado. La opción omite bytecode Hermes por incompatibilidad de arquitectura del compilador incluido en este entorno ARM64; esto no equivale a probar Expo Go en un teléfono.
+- Playwright/Chromium: cuatro pestañas, cuatro botones de contacto y tres tarjetas interactivas verificados; cero errores de consola/runtime.
 - Solicitud HTTP local a Expo Web: respuesta `200 OK`.
 
 La compilación web comprueba empaquetado y renderizado web; no equivale a una prueba en dispositivo físico/Expo Go. Para una ejecución nativa final, abrir el proyecto con Expo Go en Android o iOS.
 
 ## Repositorio
 
-Repositorio remoto incluido en la configuración Git del ZIP: [Expo-taller_Reactnative](https://github.com/joretopa7-stack/Expo-taller_Reactnative). El historial base contiene 10 commits y el trabajo nuevo se añadirá con commits reales, sin reescribir ni forzar la rama remota.
+Repositorio remoto incluido en la configuración Git del ZIP: [Expo-taller_Reactnative](https://github.com/joretopa7-stack/Expo-taller_Reactnative). El historial conserva los 10 commits base y agrega commits reales de esta entrega, sin reescribir ni forzar la rama. El ZIP incluye el historial local actualizado; el remoto no se publicó desde esta sesión.
