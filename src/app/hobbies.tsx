@@ -7,12 +7,31 @@ export default function Hobbies() {
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
       <Text style={styles.titulo}>Intereses</Text>
       <Text style={styles.introduccion}>
-        En mi tiempo libre disfruto escuchar música y el fútbol.
+        En mi tiempo libre disfruto la lectura, la programación, el deporte, el fútbol y la música.
       </Text>
+
+      <TarjetaHobby
+        titulo="Lectura"
+        detalle="Me gusta leer sobre tecnología y desarrollo personal."
+        icono="book-outline"
+      />
+
+      <TarjetaHobby
+        titulo="Deporte"
+        detalle="Practico deporte para mantenerme activo."
+        icono="football-outline"
+      />
+
+      <TarjetaHobby
+        titulo="Programación"
+        detalle="Me interesa crear aplicaciones y aprender nuevas herramientas."
+        icono="code-slash-outline"
+      />
 
       <TarjetaHobby
         titulo="Escuchar música"
         detalle="Me gusta la música urbana cristiana y la música romántica cristiana."
+        icono="musical-notes-outline"
         enlaces={[
           {
             titulo: "Urban Christian",

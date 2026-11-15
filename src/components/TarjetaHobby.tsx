@@ -17,7 +17,7 @@ type Enlace = { titulo: string; href: string };
 type Props = {
   titulo: string;
   detalle: string;
-  icono?: NombreIcono;
+  icono: NombreIcono;
   enlaces?: Enlace[];
 };
 
@@ -73,7 +73,7 @@ export default function TarjetaHobby({
         onPress={alternar}
         style={({ pressed }) => [styles.encabezado, pressed && styles.presionado]}
       >
-        {icono ? <Ionicons name={icono} size={26} color="#E95420" /> : null}
+        <Ionicons name={icono} size={26} color="#E95420" />
         <View style={styles.textosEncabezado}>
           <Text style={styles.titulo}>{titulo}</Text>
           <Text style={styles.instruccion}>
