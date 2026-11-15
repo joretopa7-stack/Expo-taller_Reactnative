@@ -1,8 +1,7 @@
-// Pantalla 1: Datos personales de Jorge Alejandro Torres Páez.
+// Pantalla 1: Datos personales.
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MiBoton from "../components/MiBoton";
-import { mostrarAlerta } from "../utils/mostrarAlerta";
 
 export default function Inicio() {
   return (
@@ -41,33 +40,32 @@ export default function Inicio() {
       </View>
 
       <View style={styles.panelContacto}>
-        <Text style={styles.tituloSeccion}>Contacto y perfiles</Text>
+        <Text style={styles.tituloSeccion}>Contacto</Text>
         <MiBoton
           titulo="Enviar correo"
           icono="mail-outline"
-          onPress={() => mostrarAlerta("Correo electrónico", "joretopa7@gmail.com")}
+          href="mailto:joretopa7@gmail.com"
         />
         <MiBoton
           titulo="Llamar"
           icono="call-outline"
-          onPress={() => mostrarAlerta("Teléfono", "+57 311 523 6763")}
+          href="tel:+573115236763"
         />
+      </View>
+
+      <View style={styles.panelContacto}>
+        <Text style={styles.tituloSeccion}>Perfiles</Text>
         <MiBoton
           titulo="LinkedIn"
           icono="logo-linkedin"
-          onPress={() =>
-            mostrarAlerta(
-              "LinkedIn",
-              "https://www.linkedin.com/in/jorge-torres-paez-120198417",
-            )
-          }
+          href="https://linkedin.com/in/jorge-torres-paez-120198417"
+          nuevaPestana
         />
         <MiBoton
           titulo="Mis proyectos GitHub"
           icono="logo-github"
-          onPress={() =>
-            mostrarAlerta("GitHub", "https://github.com/joretopa7-stack")
-          }
+          href="https://github.com/joretopa7-stack"
+          nuevaPestana
         />
       </View>
     </ScrollView>

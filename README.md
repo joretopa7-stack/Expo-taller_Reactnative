@@ -1,76 +1,52 @@
 # Hoja de vida móvil — Jorge Torres
 
-Aplicación de hoja de vida creada con Expo, React Native, TypeScript y Expo Router para el taller práctico del programa ADSO. Presenta perfil, formación, experiencia académica/proyecto e intereses documentados. La interfaz usa una paleta oscura inspirada en escritorios Linux/Ubuntu; se conservaron los nombres y diseños de los íconos provistos por el proyecto.
+Aplicación del taller ADSO construida sobre el proyecto Expo entregado. Conserva las cuatro pestañas y los componentes reutilizables requeridos, con una interfaz oscura inspirada en Linux/Ubuntu.
 
-## Requisitos
-
-- Node.js compatible con la versión de Expo declarada por el proyecto.
-- npm.
-- Expo Go si se desea abrir la aplicación en un teléfono.
-
-## Instalación y ejecución
-
-```bash
-npm ci
-npx expo start
-```
-
-Escanea el QR con Expo Go en el teléfono y mantén el computador y el dispositivo en una red que permita la conexión. Para ejecutar la versión web:
-
-```bash
-npx expo start --web
-```
-
-Las cuatro pestañas son Inicio, Estudios, Experiencia e Intereses. Los botones de contacto y las tarjetas de intereses presentan alertas; en navegador se usa una alerta web equivalente, mientras que en Android/iOS se llama a `Alert.alert`.
-
-## Estructura relevante
+## Estructura final de `src`
 
 ```text
 src/
 ├── app/
-│   ├── _layout.tsx       # navegación por pestañas e iconos
-│   ├── index.tsx         # perfil y contacto
-│   ├── estudios.tsx      # formación académica/complementaria
-│   ├── experiencia.tsx   # proyecto académico
-│   └── hobbies.tsx       # intereses formativos con alertas
-├── components/
-│   ├── MiBoton.tsx
-│   ├── TarjetaEstudio.tsx
-│   ├── TarjetaExperiencia.tsx
-│   └── TarjetaHobby.tsx
-└── utils/
-    └── mostrarAlerta.ts  # Alert.alert móvil / window.alert web
+│   ├── _layout.tsx
+│   ├── index.tsx
+│   ├── estudios.tsx
+│   ├── experiencia.tsx
+│   └── hobbies.tsx
+└── components/
+    ├── MiBoton.tsx
+    ├── TarjetaEstudio.tsx
+    ├── TarjetaExperiencia.tsx
+    └── TarjetaHobby.tsx
 ```
 
-## Dependencias del taller
+No se añadieron subcarpetas a `src`. Los componentes del starter que no son requeridos y no se importan desde esta estructura se retiraron después de comprobar sus referencias; se conservaron configuración, assets y dependencias necesarios para ejecutar Expo.
 
-Las versiones exactas son las resueltas por `package-lock.json`; las declaraciones pueden ser rangos semver.
+## Ejecución
 
-| Paquete | Versión instalada | Función y relación con esta app |
-|---|---:|---|
-| `expo-router` | 58.0.31 | Rutas por archivo y layouts; define las cuatro pantallas y el navegador inferior en `src/app/_layout.tsx`. [Docs](https://docs.expo.dev/router/basics/navigation-layouts/) · [npm](https://www.npmjs.com/package/expo-router/v/58.0.31) |
-| `react-native-safe-area-context` | 5.11.1 | Acceso a zonas seguras para evitar que el contenido quede bajo notch/barras. Está disponible como soporte del árbol de navegación; las pantallas de este taller no importan la API directamente. [Expo](https://docs.expo.dev/versions/latest/sdk/safe-area-context/) · [Repositorio](https://github.com/appandflow/react-native-safe-area-context) |
-| `react-native-screens` | 4.30.1 | Primitivas nativas usadas por infraestructura de navegación; no crea por sí sola las pestañas ni el contenido visual. [Expo](https://docs.expo.dev/versions/latest/sdk/screens/) · [Repositorio](https://github.com/software-mansion/react-native-screens/blob/main/README.md) |
-| `expo-linking` | 58.0.17 | Utilidades para deep links y URLs de la app. Está instalada, pero las acciones de contacto actuales muestran datos en alertas y no abren enlaces externos. [Expo](https://docs.expo.dev/versions/latest/sdk/linking/) · [npm](https://www.npmjs.com/package/expo-linking) |
-| `expo-constants` | 58.0.16 | Lectura de configuración y valores constantes de Expo. Está instalada, pero esta app no la importa directamente porque los datos del perfil son estáticos. [Expo](https://docs.expo.dev/versions/latest/sdk/constants/) · [npm](https://www.npmjs.com/package/expo-constants) |
-| `expo-status-bar` | 58.0.5 | Ajusta el estilo de texto de la barra de estado; se configura en el layout global para el fondo oscuro. [Expo](https://docs.expo.dev/versions/latest/sdk/status-bar/) · [Repositorio](https://github.com/expo/expo/tree/sdk-58/packages/expo-status-bar) |
-| `@expo/vector-icons` | 15.1.1 | Provee los glifos Ionicons usados en pestañas, contacto y tarjetas. La guía Expo informa que el paquete está deprecado para proyectos nuevos; se conserva porque lo exige el taller y ya forma parte del ZIP. [Expo](https://docs.expo.dev/guides/icons/) · [npm](https://www.npmjs.com/package/@expo/vector-icons) |
+```bash
+npm ci
+npx expo start --web
+```
 
-## Datos y límites de la personalización
+Para iniciar Expo Go, ejecuta `npx expo start` y escanea el QR desde un dispositivo con acceso a la red del computador. La prueba física se debe completar en el dispositivo del aprendiz.
 
-La información del perfil se tomó del CV adjunto. El proyecto *Huellitas Saludables* se presenta como proyecto académico, no como experiencia laboral formal. Como el CV no enumera pasatiempos personales, la pestaña solicitada muestra intereses de aprendizaje y competencias allí documentadas, sin inventar actividades recreativas. Se omitieron los datos de referencias familiares.
+## Funcionalidad
 
-## Comprobaciones ejecutadas
+- **Inicio:** correo `mailto:joretopa7@gmail.com`, teléfono `tel:+573115236763`, [LinkedIn](https://linkedin.com/in/jorge-torres-paez-120198417) y [GitHub](https://github.com/joretopa7-stack).
+- **Estudios:** tarjetas académicas y complementarias; los programas activos se diferencian visualmente con una cápsula morada “En Curso”.
+- **Experiencia:** Huellitas Saludables se presenta como proyecto académico.
+- **Hobbies:** únicamente “Escuchar música” y “Fútbol”. La tarjeta de música se expande dentro de la página y muestra estos destinos exactos de Spotify en botones separados:
+  - **Urban Christian:** <https://open.spotify.com/playlist/75UN9lrSGbkYl8JHf2ojvO?si=GcqoFYs9QxeII7e8yxclOw>
+  - **Románticas cristianas:** <https://open.spotify.com/playlist/7tgriHVMSbBuihjWC6Ccol?si=eCMerDimRWqmpKmGrRZZjQ>
 
-- `npm ci --no-audit --no-fund`: dependencias instaladas correctamente.
-- `npx tsc --noEmit`: TypeScript sin errores tras corregir tipos de color/ref detectados en el layout y en el componente web heredado. La pantalla `explore` original se conserva, pero se oculta del menú para que solo queden las cuatro pestañas del taller.
-- `npx expo export --platform web`: bundle web exportado a `dist/`.
-- `npx expo export --platform android --no-bytecode --output-dir /tmp/ExpoApp_android`: bundle JavaScript Android exportado. La opción omite bytecode Hermes por incompatibilidad de arquitectura del compilador incluido en este entorno ARM64; esto no equivale a probar Expo Go en un teléfono.
-- Playwright/Chromium: cuatro pestañas, cuatro botones de contacto y tres tarjetas interactivas verificados; cero errores de consola/runtime.
-- Solicitud HTTP local a Expo Web: respuesta `200 OK`.
+Los perfiles y las playlists abren pestaña nueva en Web con `noopener noreferrer`; `mailto:` y `tel:` usan los esquemas que el sistema operativo puede atender. Se conservan los nombres de iconos originales de navegación y contacto; el hobby de fútbol mantiene `football-outline`. No se incorporaron iconos nuevos a la tarjeta de música.
 
-La compilación web comprueba empaquetado y renderizado web; no equivale a una prueba en dispositivo físico/Expo Go. Para una ejecución nativa final, abrir el proyecto con Expo Go en Android o iOS.
+## Dependencias y pruebas
 
-## Repositorio
+Se mantuvieron las dependencias del taller y el lockfile: `expo-router`, `react-native-safe-area-context`, `react-native-screens`, `expo-linking`, `expo-constants`, `expo-status-bar` y `@expo/vector-icons`.
 
-Repositorio remoto incluido en la configuración Git del ZIP: [Expo-taller_Reactnative](https://github.com/joretopa7-stack/Expo-taller_Reactnative). El historial conserva los 11 commits base y agrega cinco commits locales reales de esta entrega, sin reescribir ni forzar la rama. El ZIP incluye el historial local actualizado; el remoto no se publicó desde esta sesión.
+Validado en el entorno de desarrollo con `npx tsc --noEmit`, exportación Web y bundle Android JavaScript con `--no-bytecode`. Chromium verificó las cuatro pestañas, los cuatro enlaces de contacto/perfiles, los dos paneles de interés, ambas playlists, apertura en pestaña nueva, y ausencia de diálogos y errores JavaScript. Los enlaces externos respondieron HTTP 200 en la comprobación directa. El registro detallado está en `../documentacion/validaciones.txt`.
+
+## Git
+
+La copia conserva el historial base y los commits locales de la entrega. No se reescribieron commits existentes ni se hizo `push`; el estado final de rama y remoto está en `../evidencias/historial_git_final.txt`.

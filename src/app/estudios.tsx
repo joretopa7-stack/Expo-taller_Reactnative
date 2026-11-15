@@ -1,4 +1,4 @@
-// Pantalla 2: Formación académica y complementaria verificada en el CV.
+// Pantalla 2: Formación académica y complementaria.
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import TarjetaEstudio from "../components/TarjetaEstudio";
 
@@ -7,7 +7,7 @@ export default function Estudios() {
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
       <Text style={styles.titulo}>Formación académica</Text>
       <Text style={styles.introduccion}>
-        Estudios y formación complementaria incluidos en el currículum.
+        Formación académica y cursos complementarios.
       </Text>
 
       <TarjetaEstudio
@@ -61,9 +61,27 @@ export default function Estudios() {
 
 const styles = StyleSheet.create({
   pantalla: { backgroundColor: "#171D26" },
-  contenido: { padding: 18, paddingBottom: 30, flexGrow: 1, width: "100%", maxWidth: 760, alignSelf: "center" },
+  contenido: {
+    padding: 18,
+    paddingBottom: 30,
+    flexGrow: 1,
+    width: "100%",
+    maxWidth: 760,
+    alignSelf: "center",
+  },
   titulo: { color: "#F4F6F8", fontSize: 23, fontWeight: "800" },
-  introduccion: { color: "#AAB4C0", fontSize: 14, lineHeight: 20, marginTop: 6, marginBottom: 10 },
+  introduccion: {
+    color: "#AAB4C0",
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 6,
+    marginBottom: 10,
+  },
   separador: { height: 1, backgroundColor: "#394554", marginVertical: 15 },
-  subtitulo: { color: "#E7A58D", fontSize: 17, fontWeight: "700", marginBottom: 6 },
+  subtitulo: {
+    color: "#E7A58D",
+    fontSize: 17,
+    fontWeight: "700",
+    marginBottom: 6,
+  },
 });

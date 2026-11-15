@@ -1,5 +1,4 @@
-// Menú inferior con cuatro pestañas e iconos originales
-
+// Menú inferior con cuatro pestañas e iconos originales.
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -58,7 +57,7 @@ export default function Layout() {
           name="experiencia"
           options={{
             title: "Experiencia",
-            headerTitle: "Experiencia Laboral",
+            headerTitle: "Experiencia y Proyectos",
             tabBarIcon: ({ color, size }) => (
               <Ionicons
                 name="briefcase-outline"
@@ -82,7 +81,6 @@ export default function Layout() {
             ),
           }}
         />
-        <Tabs.Screen name="explore" options={{ href: null }} />
       </Tabs>
     </>
   );
