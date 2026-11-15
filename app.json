@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ExpoApp",
+    "name": "CV Jorge Torres",
     "slug": "ExpoApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,7 +28,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#171D26",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }

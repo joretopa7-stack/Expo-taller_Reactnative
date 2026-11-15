@@ -1,47 +1,69 @@
-//Pantalla 2: Formación Académica
-import { ScrollView, StyleSheet, Text } from "react-native";
+// Pantalla 2: Formación académica y complementaria verificada en el CV.
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import TarjetaEstudio from "../components/TarjetaEstudio";
 
 export default function Estudios() {
   return (
-    <ScrollView contentContainerStyle={styles.contenido}>
+    <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
       <Text style={styles.titulo}>Formación académica</Text>
+      <Text style={styles.introduccion}>
+        Estudios y formación complementaria incluidos en el currículum.
+      </Text>
 
       <TarjetaEstudio
         institucion="SENA"
-        programa="Análisis y Desarrollo de Software"
+        programa="Tecnología en Análisis y Desarrollo de Software"
         periodo="En curso"
         enCurso={true}
       />
-
       <TarjetaEstudio
-        institucion="Nombre de institución"
-        programa="Nombre del programa"
-        periodo="2022 - 2023"
+        institucion="SENA"
+        programa="Técnico en Programación de Software"
+        periodo="2025"
+        enCurso={false}
+      />
+      <TarjetaEstudio
+        institucion="Colegio Arbolizadora Baja IED"
+        programa="Bachiller Académico"
+        periodo="2025"
         enCurso={false}
       />
 
+      <View style={styles.separador} />
+      <Text style={styles.subtitulo}>Formación complementaria</Text>
       <TarjetaEstudio
-        institucion="Nombre de institución"
-        programa="Nombre del programa"
-        periodo="2020 - 2021"
+        institucion="SENA"
+        programa="Controles y Seguridad Informática"
+        periodo="2026"
         enCurso={false}
+      />
+      <TarjetaEstudio
+        institucion="SENA"
+        programa="Apropiación de Conceptos de Ciberseguridad"
+        periodo="2026"
+        enCurso={false}
+      />
+      <TarjetaEstudio
+        institucion="Udemy"
+        programa="Ciberseguridad"
+        periodo="En curso"
+        enCurso={true}
+      />
+      <TarjetaEstudio
+        institucion="Open English"
+        programa="Inglés"
+        periodo="En curso"
+        enCurso={true}
       />
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  contenido: {
-    padding: 20,
-    backgroundColor: "#F8FAFC",
-    flexGrow: 1,
-  },
-  titulo: {
-    color: "#1E293B",
-    fontSize: 23,
-    fontWeight: "bold",
-    marginBottom: 12,
-  },
+  pantalla: { backgroundColor: "#171D26" },
+  contenido: { padding: 18, paddingBottom: 30, flexGrow: 1, width: "100%", maxWidth: 760, alignSelf: "center" },
+  titulo: { color: "#F4F6F8", fontSize: 23, fontWeight: "800" },
+  introduccion: { color: "#AAB4C0", fontSize: 14, lineHeight: 20, marginTop: 6, marginBottom: 10 },
+  separador: { height: 1, backgroundColor: "#394554", marginVertical: 15 },
+  subtitulo: { color: "#E7A58D", fontSize: 17, fontWeight: "700", marginBottom: 6 },
 });
-//ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

@@ -13,7 +13,6 @@ export default function TarjetaEstudio({
   periodo,
   enCurso,
 }: Props) {
-  // PISTA: Aplica un estilo condicional si enCurso es verdadero
   return (
     <View
       style={[
@@ -21,10 +20,14 @@ export default function TarjetaEstudio({
         enCurso ? styles.enCurso : styles.finalizado,
       ]}
     >
-      <Text style={styles.titulo}>{programa}</Text>
-
-      {/* PISTA: Si está en curso, muestra un texto indicativo */}
-      {enCurso && <Text style={styles.badge}>En Curso</Text>}
+      <View style={styles.filaTitulo}>
+        <Text style={styles.titulo}>{programa}</Text>
+        {enCurso && (
+          <View style={styles.badge}>
+            <Text style={styles.badgeTexto}>En Curso</Text>
+          </View>
+        )}
+      </View>
 
       <Text style={styles.subtitulo}>{institucion}</Text>
       <Text style={styles.anio}>{periodo}</Text>
@@ -35,34 +38,51 @@ export default function TarjetaEstudio({
 const styles = StyleSheet.create({
   tarjeta: {
     padding: 16,
-    borderRadius: 10,
-    marginVertical: 8,
+    borderRadius: 12,
+    marginVertical: 7,
     borderWidth: 1,
   },
   finalizado: {
-    backgroundColor: "#ffffff",
-    borderColor: "#ccc",
+    backgroundColor: "#222B36",
+    borderColor: "#394554",
   },
   enCurso: {
-    backgroundColor: "#eef2ff",
-    borderColor: "#6366f1",
-  }, // ¡otro color!
+    backgroundColor: "#30243A",
+    borderColor: "#8A5AA0",
+  },
+  filaTitulo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    gap: 10,
+  },
   titulo: {
+    color: "#F4F6F8",
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "700",
+    flex: 1,
   },
   subtitulo: {
     fontSize: 14,
-    color: "#555",
+    color: "#C5CDD6",
+    marginTop: 8,
   },
   anio: {
     fontSize: 12,
-    color: "#888",
+    color: "#AAB4C0",
+    marginTop: 6,
   },
   badge: {
-    color: "#6366f1",
-    fontWeight: "bold",
-    fontSize: 12,
+    backgroundColor: "#77216F",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 999,
+    alignSelf: "flex-start",
+  },
+  badgeTexto: {
+    color: "#FFFFFF",
+    fontWeight: "700",
+    fontSize: 11,
   },
 });
 //ESTRUCTURA DE LA APLICACIÓN FUNCIONAL

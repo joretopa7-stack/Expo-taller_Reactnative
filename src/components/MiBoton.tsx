@@ -15,6 +15,7 @@ type Props = {
 export default function MiBoton({ titulo, icono, onPress }: Props) {
   return (
     <Pressable
+      accessibilityRole="button"
       onPress={onPress}
       style={({ pressed }) => [styles.boton, pressed && styles.presionado]}
     >
@@ -26,7 +27,9 @@ export default function MiBoton({ titulo, icono, onPress }: Props) {
 
 const styles = StyleSheet.create({
   boton: {
-    backgroundColor: "#6D28D9",
+    backgroundColor: "#77216F",
+    borderColor: "#9B4B91",
+    borderWidth: 1,
     borderRadius: 12,
     padding: 14,
     marginVertical: 6,
@@ -36,11 +39,12 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   presionado: {
-    opacity: 0.75,
+    opacity: 0.76,
+    transform: [{ scale: 0.99 }],
   },
   texto: {
     color: "#FFFFFF",
-    fontWeight: "bold",
+    fontWeight: "700",
   },
 });
 //ESTRUCTURA DE LA APLICACIÓN FUNCIONAL
